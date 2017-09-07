@@ -1,0 +1,54 @@
+<html>
+
+<head>
+
+
+
+<script>
+
+	var message = {
+		serviceID:4,
+		nama:"Perbaikan Kamar Saya",
+		bulan:3,
+		tahun:2020,
+		id_project:1,
+		id_barang:1,
+		qty:100,
+		current_qty:70,
+		id_project_barang:13
+	};
+	
+	var message_JSON = JSON.stringify(message);
+	var xhr = new XMLHttpRequest();
+	var formData = new FormData();
+	
+	formData.append("data" , message_JSON);
+	xhr.open("post","index.php");
+	xhr.send(formData);
+
+	
+	xhr.onprogress = function () {
+		console.log('LOADING', xhr.status);
+	};
+
+	xhr.onload = function () {
+	  console.log('DONE', xhr.status);
+	  console.log(xhr.responseText);
+	};
+		
+	
+	
+	
+
+</script>
+
+
+
+</head>
+
+
+<body>
+
+
+
+</body>
